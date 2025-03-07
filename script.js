@@ -1,0 +1,1 @@
+console.log("Hello there, We're gonna play # Project: Rock Paper Scissors soon!")
