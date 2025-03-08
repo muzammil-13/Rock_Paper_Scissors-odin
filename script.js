@@ -9,8 +9,10 @@ function getComputerChoice(){
         return "Rock"
     }else if(randomNumber===1){
         return "Paper"
-    }else{
+    }else if(randomNumber===2){
         return "Scissors"
+    }else{
+        return "Tie"
     }
 }
 
@@ -25,11 +27,46 @@ function getHumanChoice(){
 getHumanChoice()
 
 // Step 4: Declare the players score variables
-let humanScore=0;
-let computerScore=0;
+// let humanScore=0;
+// let computerScore=0;
 
 // Step 5: Write the logic to play a single round
-function playRound(humanScore,computerScore){
-    
-}
+// function playRound(humanChoice,computerChoice){
+//        humanChoice=humanChoice.toLowerCase()
+
+//        console.log("You lose! Paper beats Rock")
+
+//        if(humanChoice>computerChoice){
+//         humanScore+=1;
+//        }else if(computerChoice>humanChoice){
+//         computerScore+=1;
+//        }else{
+//         pass
+//        }
+
+// }
+
+const humanSelection=getHumanChoice();
+const computerSelection=getComputerChoice();
+
+playRound(humanSelection,computerSelection)
+
 // Step 6: Write the logic to play the entire game
+function playGame(){
+
+    function playRound(humanChoice,computerChoice){
+        humanChoice=humanChoice.toLowerCase()
+ 
+        console.log("You lose! Paper beats Rock")
+ 
+        if(humanChoice>computerChoice){
+         humanScore+=1;
+        }else if(computerChoice>humanChoice){
+         computerScore+=1;
+        }else{
+         return "Tie"
+        }
+ }
+    let humanScore=0;
+    let computerScore=0;
+}
