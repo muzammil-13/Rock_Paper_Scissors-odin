@@ -1,9 +1,5 @@
 // Step 1: Setup the project structure
-// console.log("Hello there, We're gonna play # Project: Rock Paper Scissors soon!")
-let gameRules=["Rock beats Scissors",
-                "Scissors beats Paper",
-                "Paper beats Rock"]
-console.log("Game rules: "+gameRules)
+console.log("Game rules: Rock beats Scissors, Scissors beats Paper, Paper beats Rock")
 
 // Step 2: Write the logic to get the computer choice
 function getComputerChoice(){
@@ -17,15 +13,12 @@ function getComputerChoice(){
         return "Scissors"
     }
 }
-// console.log("Computer Chose: "+getComputerChoice())
 
 // Step 3: Write the logic to get the human choice
 function getHumanChoice(){
     let userInput=prompt("Rock, Paper, or Scissors ?")
-    // console.log("User Chose: "+userInput)
     return userInput;
 }
-// getHumanChoice()
 
 // Step 4: Declare the players score variables
 let humanScore=0;
@@ -55,17 +48,12 @@ function playRound(humanChoice,computerChoice){
     console.log(`Score: Computer=${computerScore} | Human=${humanScore}`)
 }
 
-// const humanSelection=getHumanChoice();
-// const computerSelection=getComputerChoice();
-
-// playRound(humanSelection,computerSelection)
-
 // Step 6: Write the logic to play the entire game
 function playGame(){
     humanScore=0;
     computerScore=0;
 
-// Play 5 rounds by calling playRound 5 times.
+    // Play 5 rounds by calling playRound 5 times.
     for(let i=0;i<5;i++){
         let humanSelection=getHumanChoice();
         let computerSelection=getComputerChoice();
@@ -83,7 +71,6 @@ function playGame(){
 }
 
 // start the game
-// playGame()
 if(confirm("Do you want to play?")){
     playGame()
 }else{
