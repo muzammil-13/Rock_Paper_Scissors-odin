@@ -15,14 +15,17 @@ function getComputerChoice(){
 }
 
 // Step 3: Write the logic to get the human choice
-function getHumanChoice(){
-    let userInput=prompt("Rock, Paper, or Scissors ?")
-    return userInput;
-}
+// function getHumanChoice(){
+//     let userInput=prompt("Rock, Paper, or Scissors ?")
+//     return userInput;
+// }
 
 // Step 4: Declare the players score variables
 let humanScore=0;
 let computerScore=0;
+
+// DOM elements
+
 
 // Step 5: Write the logic to play a single round
 function playRound(humanChoice,computerChoice){
@@ -54,11 +57,11 @@ function playGame(){
     computerScore=0;
 
     // Play 5 rounds by calling playRound 5 times.
-    for(let i=0;i<5;i++){
+    // for(let i=0;i<5;i++){
         let humanSelection=getHumanChoice();
         let computerSelection=getComputerChoice();
         playRound(humanSelection,computerSelection)
-    }
+    // }
 
     console.log("Game OVER!")
     console.log(
