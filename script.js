@@ -17,12 +17,12 @@ function getComputerChoice(){
         return "Scissors"
     }
 }
-// console.log(getComputerChoice())
+// console.log("Computer Chose: "+getComputerChoice())
 
 // Step 3: Write the logic to get the human choice
 function getHumanChoice(){
     let userInput=prompt("Rock, Paper, or Scissors ?")
-    console.log(userInput)
+    // console.log("User Chose: "+userInput)
     return userInput;
 }
 // getHumanChoice()
