@@ -1,5 +1,5 @@
 // Step 1: Setup the project structure
-console.log("Hello there, We're gonna play # Project: Rock Paper Scissors soon!")
+// console.log("Hello there, We're gonna play # Project: Rock Paper Scissors soon!")
 let gameRules=["Rock beats Scissors",
                 "Scissors beats Paper",
                 "Paper beats Rock"]
