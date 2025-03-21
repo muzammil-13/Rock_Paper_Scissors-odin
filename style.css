@@ -1,0 +1,15 @@
+.main{
+    display: flex;
+}
+
+.btns{
+    display: flex;
+    background-color: green;
+    align-items: center;
+}
+
+button{
+    color: white;
+    background-color: black;
+    
+}
