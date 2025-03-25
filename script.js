@@ -25,6 +25,10 @@ let humanScore=0;
 let computerScore=0;
 
 // DOM elements
+const humanScoreDisplay=document.getElementById("human-score");
+const computerScoreDisplay=document.getElementById("computer-score");
+const roundResultDisplay=document.getElementById("round-result");
+const gameResultDisplay=document.getElementById("game-result");
 
 
 // Step 5: Write the logic to play a single round
@@ -51,10 +55,22 @@ function playRound(humanChoice,computerChoice){
     console.log(`Score: Computer=${computerScore} | Human=${humanScore}`)
 }
 
+// event listeners
+document.getElementById('rk-btn').addEventListener('click',()=>{
+    playRound('rock');
+});
+document.getElementById('ppr-btn').addEventListener('click',()=>{
+    playRound('paper');
+});
+document.getElementById('scsr-btn').addEventListener('click',()=>{
+    playRound('scissors');
+});
+
 // Step 6: Write the logic to play the entire game
 function playGame(){
     humanScore=0;
     computerScore=0;
+    const maxScore=5;
 
     // Play 5 rounds by calling playRound 5 times.
     // for(let i=0;i<5;i++){
@@ -63,19 +79,32 @@ function playGame(){
         playRound(humanSelection,computerSelection)
     // }
 
-    console.log("Game OVER!")
-    console.log(
-        humanScore>computerScore
-        ?"You Win the match"
-        :humanScore<computerScore
-        ?"Computer Wins the match!"
-        :"WE GOT TIE!"
-    )
+    // console.log("Game OVER!")
+    // console.log(
+    //     humanScore>computerScore
+    //     ?"You Win the match"
+    //     :humanScore<computerScore
+    //     ?"Computer Wins the match!"
+    //     :"WE GOT TIE!"
+    // )
+
+    if(humanScore>=maxScore || computerScore>=maxScore){
+        if(humanScore>computerScore){
+            gameResultDisplay.textContent="Game over! You WIN!!!";
+        }else{
+            gameResultDisplay.textContent="Game Over! Computer Win";
+        }
+    }
 }
 
+// updating DOM
+roundResultDisplay.innerHTML=`You choose: ${humanSelection} | Computer chose: ${computerSelection}`;
+humanScoreDisplay.textContent=humanScore;
+
 // start the game
-if(confirm("Do you want to play?")){
-    playGame()
-}else{
-    console.log("May be next time!")
-}
+playGame()
+// if(confirm("Do you want to play?")){
+//     playGame()
+// }else{
+//     console.log("May be next time!")
+// }
