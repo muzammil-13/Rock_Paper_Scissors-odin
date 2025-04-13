@@ -23,6 +23,7 @@ function getComputerChoice(){
 // Step 4: Declare the players score variables
 let humanScore=0;
 let computerScore=0;
+const maxScore=5;
 
 // DOM elements
 const humanScoreDisplay=document.getElementById("human-score");
@@ -36,6 +37,7 @@ function playRound(humanChoice,computerChoice){
        humanChoice=humanChoice.toLowerCase();
        computerChoice=computerChoice.toLowerCase();
 
+       roundResultDisplay.textContent=`Human: ${humanChoice} | Computer: ${computerChoice}`;
        console.log(`Human: ${humanChoice} | Computer: ${computerChoice}`)
 
        if(
@@ -43,13 +45,16 @@ function playRound(humanChoice,computerChoice){
         (humanChoice==="scissors" && computerChoice==="paper") ||
         (humanChoice==="paper" && computerChoice==="rock")
        ){
-        humanScore+=1
-        console.log(`You Scored! ${humanChoice} beats ${computerChoice}`)
+        humanScore+=1;
+        roundResultDisplay.textContent=`You Scored! ${humanChoice} beats ${computerChoice}`;
+        console.log(`You Scored! ${humanChoice} beats ${computerChoice}`);
        }else if(humanChoice===computerChoice){
-        console.log(`Its a Tie! You both chose ${humanChoice}`)
+        roundResultDisplay.textContent=`Its a Tie! You both chose ${humanChoice}`;
+        console.log(`Its a Tie! You both chose ${humanChoice}`);
        }else{
-        computerScore+=1
-        console.log(`You Lose! ${computerChoice} beats ${humanChoice}`)
+        computerScore+=1;
+        roundResultDisplay.textContent=`You Lose! ${computerChoice} beats ${humanChoice}`;
+        console.log(`You Lose! ${computerChoice} beats ${humanChoice}`);
        }
 
     console.log(`Score: Computer=${computerScore} | Human=${humanScore}`)
@@ -72,12 +77,11 @@ function playGame(){
     computerScore=0;
     const maxScore=5;
 
-    // Play 5 rounds by calling playRound 5 times.
-    // for(let i=0;i<5;i++){
-        let humanSelection=getHumanChoice();
-        let computerSelection=getComputerChoice();
-        playRound(humanSelection,computerSelection)
-    // }
+    let humanSelection=getHumanChoice();
+    let computerSelection=getComputerChoice();
+    playRound(humanSelection,computerSelection)
+
+    roundResultDisplay.innerHTML=`You choose: ${humanSelection} | Computer chose: ${computerSelection}`;
 
     // console.log("Game OVER!")
     // console.log(
@@ -98,8 +102,8 @@ function playGame(){
 }
 
 // updating DOM
-roundResultDisplay.innerHTML=`You choose: ${humanSelection} | Computer chose: ${computerSelection}`;
 humanScoreDisplay.textContent=humanScore;
+computerScoreDisplay.textContent=computerScore;
 
 // start the game
 playGame()
