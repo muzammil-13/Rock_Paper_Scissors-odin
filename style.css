@@ -1,0 +1,58 @@
+/* General Styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    color: #333;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+}
+
+h1 {
+    text-align: center;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    color: #87ceeb;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    padding: 2%;
+    align-items: center;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.content {
+    background-color: #87ceeb;
+    width: 20rem;
+    padding: 1rem;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.btns {
+    padding: 1%;
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+button {
+    color: white;
+    background-color: #87ceeb;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #87ceeb;
+}
