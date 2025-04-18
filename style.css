@@ -1,58 +1,80 @@
-/* General Styles */
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-    color: #333;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    flex-direction: column;
+    font-family: Arial, sans-serif;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+    background-color: #f5f5f5;
 }
 
 h1 {
-    text-align: center;
-    font-family: 'Comic Sans MS', cursive, sans-serif;
-    color: #87ceeb;
+    color: #333;
+    margin-bottom: 30px;
 }
 
 .main {
-    display: flex;
-    flex-direction: column;
-    padding: 2%;
-    align-items: center;
-    background: #fff;
+    background-color: white;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .content {
-    background-color: #87ceeb;
-    width: 20rem;
-    padding: 1rem;
-    border-radius: 5px;
-    text-align: center;
+    margin-bottom: 20px;
 }
 
 .btns {
-    padding: 1%;
     display: flex;
-    justify-content: space-between;
-    gap: 10px;
+    justify-content: center;
+    gap: 15px;
+    margin: 20px 0;
 }
 
 button {
-    color: white;
-    background-color: #87ceeb;
-    border: none;
     padding: 10px 20px;
+    font-size: 16px;
+    border: none;
     border-radius: 5px;
+    background-color: #4CAF50;
+    color: white;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s;
 }
 
 button:hover {
-    background-color: #87ceeb;
+    background-color: #45a049;
+}
+
+button:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+}
+
+#reset-btn {
+    background-color: #f44336;
+    margin-top: 15px;
+}
+
+#reset-btn:hover {
+    background-color: #d32f2f;
+}
+
+.score-container {
+    margin: 20px 0;
+    font-size: 18px;
+}
+
+#results {
+    margin-top: 20px;
+    min-height: 80px;
+}
+
+#round-result, #game-result {
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+#game-result {
+    color: #d32f2f;
+    font-size: 20px;
 }
